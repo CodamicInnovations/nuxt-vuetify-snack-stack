@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-vuetify-snack-stack",
+  "version": "0.0.1",
+  "description": "Show stackable vuetify snacks from anywhere",
+  "author": "Codamic Innovations GmbH <info@codamic.com> (http://codamic.com/)",
+  "main": "module.js",
+  "devDependencies": {
+    "@nuxt/test-utils": "^0.2.2",
+    "@nuxtjs/vuetify": "^1.11.3",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "nuxt": "^2.14.12"
+  },
+  "contributors": [
+    "Florian Wagner <f.wagner@codamic.com> (http://codamic.com/)"
+  ],
+  "email": "info@codamic.com",
+  "license": "MIT"
+}
