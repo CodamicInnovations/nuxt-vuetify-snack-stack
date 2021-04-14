@@ -1,6 +1,6 @@
 {
-  "name": "nuxt-vuetify-snack-stack",
-  "version": "0.0.1",
+  "name": "@codamic/nuxt-vuetify-snack-stack",
+  "version": "0.0.2",
   "description": "Show stackable vuetify snacks from anywhere",
   "author": "Codamic Innovations GmbH <info@codamic.com> (http://codamic.com/)",
   "main": "module.js",
@@ -19,5 +19,24 @@
     "Florian Wagner <f.wagner@codamic.com> (http://codamic.com/)"
   ],
   "email": "info@codamic.com",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodamicInnovations/nuxt-vuetify-snack-stack.git"
+  },
+  "keywords": [
+    "nuxt",
+    "vuetify",
+    "snacks",
+    "snackStack",
+    "vue",
+    "nuxt-module"
+  ],
+  "bugs": {
+    "url": "https://github.com/CodamicInnovations/nuxt-vuetify-snack-stack/issues"
+  },
+  "homepage": "https://github.com/CodamicInnovations/nuxt-vuetify-snack-stack#readme"
 }
