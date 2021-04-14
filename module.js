@@ -31,7 +31,7 @@ export default function (moduleOptions) {
   const { namespace } = options
 
   // add all of the initial plugins
-  const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js', 'debug.js']
+  const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js']
   for (const pathString of pluginsToSync) {
     this.addPlugin({
       src: resolve(__dirname, pathString),
@@ -41,7 +41,7 @@ export default function (moduleOptions) {
   }
 
   // sync all of the files and folders to revelant places in the nuxt build dir (.nuxt/)
-  const foldersToSync = ['store/modules', 'components/lib']
+  const foldersToSync = ['store', 'components/lib', 'plugins']
   for (const pathString of foldersToSync) {
     const path = resolve(__dirname, pathString)
     for (const file of readdirSync(path)) {

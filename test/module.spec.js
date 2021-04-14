@@ -4,7 +4,7 @@ import defaultOptions from '../options'
 describe('Value tests', () => {
   setupTest({})
   it('should call expected plugins with default options', () => {
-    const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js', 'debug.js']
+    const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js']
     for (const plugin of pluginsToSync) {
       expectModuleToBeCalledWith('addPlugin', {
         src: expect.stringContaining(plugin),
@@ -25,7 +25,7 @@ describe('Custom Namespace', () => {
   })
 
   it('should call expected plugins with default options', () => {
-    const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js', 'debug.js']
+    const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js']
     for (const plugin of pluginsToSync) {
       expectModuleToBeCalledWith('addPlugin', {
         src: expect.stringContaining(plugin),
@@ -105,6 +105,29 @@ describe('Edit default Types', () => {
         },
       },
     }
+    expectModuleToBeCalledWith(
+      'addPlugin',
+      expect.objectContaining({
+        options: expectedOptions,
+      })
+    )
+  })
+})
+
+describe('Custom Timeout', () => {
+  setupTest({
+    config: {
+      snackStack: {
+        timeout: 1234,
+      },
+    },
+  })
+
+  it('should be possible to add custom types', () => {
+    // types = customtypes + defaulttypes
+    const expectedOptions = JSON.parse(JSON.stringify(defaultOptions))
+    expectedOptions.timeout = 1234
+
     expectModuleToBeCalledWith(
       'addPlugin',
       expect.objectContaining({

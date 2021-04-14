@@ -78,7 +78,7 @@ snackStack: {
 #### namespace: String
 Changing the namespace of the modul changes the store injection and the plugin injection. So when your change the namespace to `somethingElse` the plugin is now accessible with `$somethingElse`
 
-#### namespace: Number
+#### timeout: Number
 set a new default timeout for all snacks
 
 
@@ -112,7 +112,7 @@ show a snack with options
 ```JS
   this.$snack.show({
     text: 'Error Message',
-    type: 'error'
+    type: 'error',
     timeout: 4242,
   })
 ```
@@ -121,6 +121,7 @@ show a snack with options
 
 `.show(options|String)` show Snack
 `.hide()` hide current visible snack
+`.hideAll()` clear all messages
 `.showInfo(options|String)` show info snack
 `.showError(options|String)` show error snack
 `.showWarning(options|String)` show warning snack
@@ -131,7 +132,7 @@ show a snack with options
 ```JS
 {
   text: String,
-  type: error|info|warning|success|{custom}
+  type: error|info|warning|success|{custom},
   timeout: Number,
   icon: String,
   color: String, // Vuetify color or HEX RGB RGBA color value
@@ -143,8 +144,14 @@ show a snack with options
 1. Clone this repository
 2. Install dependencies using `npm install`
 
+## Test
+
+1. Clone this repository
+2. Install dependencies using `npm install`
+3. run unit tests `npm run test`
+
 ## License
 
 [MIT License](./LICENSE)
 
-Copyright (c) Codamic GmbH
+Copyright (c) Codamic Innovations GmbH

@@ -4,6 +4,9 @@
   "description": "Show stackable vuetify snacks from anywhere",
   "author": "Codamic Innovations GmbH <info@codamic.com> (http://codamic.com/)",
   "main": "module.js",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "@nuxt/test-utils": "^0.2.2",
     "@nuxtjs/vuetify": "^1.11.3",
