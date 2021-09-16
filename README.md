@@ -9,23 +9,23 @@ This tool is based on **nuxt** and **@nuxtjs/vuetify**
 
 ## Setup
 1. Make sure you have `@nuxt/vuetify` installed on your nuxt project
-2. Add `nuxt-vuetify-snack-stack` dependency to your project
+2. Add `@codamic/nuxt-vuetify-snack-stack` dependency to your project
 
 ```bash
-npm install nuxt-vuetify-snack-stack
+npm install @codamic/nuxt-vuetify-snack-stack
 ```
 
-3. Add `nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.js`
+3. Add `@codamic/nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.js`
 
 
 ```js
 {
   modules: [
     // Simple usage
-    'nuxt-vuetify-snack-stack',
+    '@codamic/nuxt-vuetify-snack-stack',
 
     // With options
-    ['nuxt-vuetify-snack-stack', { /* module options */ }]
+    ['@codamic/nuxt-vuetify-snack-stack', { /* module options */ }]
   ]
 }
 ```
@@ -37,7 +37,7 @@ npm install nuxt-vuetify-snack-stack
 ```js
 {
   buildModules: [
-    'nuxt-vuetify-snack-stack'
+    '@codamic/nuxt-vuetify-snack-stack'
   ],
   snackStack: {
     /* module options */
@@ -120,12 +120,19 @@ show a snack with options
 #### Methods
 
 `.show(options|String)` show Snack
+
 `.hide()` hide current visible snack
+
 `.hideAll()` clear all messages
+
 `.showInfo(options|String)` show info snack
+
 `.showError(options|String)` show error snack
+
 `.showWarning(options|String)` show warning snack
+
 `.showSuccess(options|String)` show success snack
+
 `.show`**Custom**`(options|String)` generates a function for custom defined types
 
 ##### show options

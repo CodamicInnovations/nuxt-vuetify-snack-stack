@@ -34,7 +34,7 @@ const typeMethods = ({ store, types, namespace }) => {
 export const snackPluginMethods = ({ store, types, namespace }) => {
   return {
     show(payload) {
-      store.commit('snackStack/show', payload)
+      store.commit(namespace + '/show', payload)
     },
     ...typeMethods({ store, types, namespace }),
     hide() {
