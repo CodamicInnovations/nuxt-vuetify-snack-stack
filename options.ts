@@ -1,4 +1,6 @@
-export default {
+import { SnackStackOptions } from './interface';
+
+const defaultOptions: SnackStackOptions = {
   namespace: 'snack',
   timeout: 5000,
   types: {
@@ -20,3 +22,6 @@ export default {
     },
   },
 }
+
+export default defaultOptions
+

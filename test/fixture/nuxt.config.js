@@ -1,5 +1,5 @@
 export default {
   srcDir: __dirname,
-  modules: ['nuxt-vuetify-snack-stack'],
+  modules: ['../../module'],
   // snackStack: { namespace: 'snack' },
 }

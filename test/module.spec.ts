@@ -1,10 +1,11 @@
 import { expectModuleToBeCalledWith, setupTest } from '@nuxt/test-utils'
 import defaultOptions from '../options'
 
+const pluginsToSync = ['components/index.ts', 'store/index.ts', 'plugins/index.ts']
+
 describe('Value tests', () => {
   setupTest({})
   it('should call expected plugins with default options', () => {
-    const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js']
     for (const plugin of pluginsToSync) {
       expectModuleToBeCalledWith('addPlugin', {
         src: expect.stringContaining(plugin),
@@ -25,7 +26,6 @@ describe('Custom Namespace', () => {
   })
 
   it('should call expected plugins with default options', () => {
-    const pluginsToSync = ['components/index.js', 'store/index.js', 'plugins/index.js']
     for (const plugin of pluginsToSync) {
       expectModuleToBeCalledWith('addPlugin', {
         src: expect.stringContaining(plugin),

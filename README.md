@@ -9,13 +9,14 @@ This tool is based on **nuxt** and **@nuxtjs/vuetify**
 
 ## Setup
 1. Make sure you have `@nuxt/vuetify` installed on your nuxt project
-2. Add `@codamic/nuxt-vuetify-snack-stack` dependency to your project
+2. If you haven't yet activate the nuxt store (simply put a empty index.ts in /store folder)
+3. Add `@codamic/nuxt-vuetify-snack-stack` dependency to your project
 
 ```bash
 npm install @codamic/nuxt-vuetify-snack-stack
 ```
 
-3. Add `@codamic/nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.js`
+4. Add `@codamic/nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.js`
 
 
 ```js
@@ -29,14 +30,14 @@ npm install @codamic/nuxt-vuetify-snack-stack
   ]
 }
 ```
-4. **Add the `<snack-stack />` component to your nuxt layout**
+5. **Add the `<snack-stack />` component to your nuxt layout**
 
 
 ### Using top level options
 
 ```js
 {
-  buildModules: [
+  modules: [
     '@codamic/nuxt-vuetify-snack-stack'
   ],
   snackStack: {
