@@ -1,4 +1,6 @@
 import { SnackMessage, ModuleOptions } from '../module'
+import { useRuntimeConfig } from '#app'
+import { useState } from '#imports'
 
 export function useSnack() {
   const errorMessages = useState<SnackMessage[]>('snack-stack-messages')

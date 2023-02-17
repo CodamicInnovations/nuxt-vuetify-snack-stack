@@ -1,10 +1,14 @@
-import { useState } from '@nuxt/bridge-edge/dist/runtime/composables'
 import { useSnack } from './composables'
 import { SnackMessage } from '../module'
-import { defineNuxtPlugin } from '@nuxt/bridge-edge/dist/runtime/app'
+import { defineNuxtPlugin } from '#app'
+import { useState } from '#imports'
 
-export default defineNuxtPlugin(nuxt => {
+export default defineNuxtPlugin(() => {
   useState<SnackMessage[]>('snack-stack-messages', () => [])
 
-  nuxt.provide('snack', useSnack())
+  return {
+    provide: {
+      snack: useSnack()
+    }
+  }
 })

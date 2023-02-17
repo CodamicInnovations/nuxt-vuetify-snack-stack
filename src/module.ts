@@ -16,7 +16,8 @@ export default defineNuxtModule<ModuleOptions>({
     name: "@codamic/nuxt-vuetify-snack-stack",
     configKey: "codamic-nuxt-vuetify-snack-stack",
     compatibility: {
-      nuxt: '^2.0.0'
+      nuxt: '^2.0.0',
+      bridge: true
     },
   },
   // Default configuration options of the Nuxt module

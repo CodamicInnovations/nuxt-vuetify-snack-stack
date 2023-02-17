@@ -1,3 +1,5 @@
+import {useSnack} from './runtime/composables'
+
 export interface SnackMessage {
   text: string
   timeout?: number
@@ -14,4 +16,10 @@ export interface SnackStackType {
 export interface ModuleOptions {
   timeout: number
   types: Record<'error' | 'success' | 'info' | 'warning' | string, SnackStackType>
+}
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $snack: ReturnType<typeof useSnack>;
+  }
 }
