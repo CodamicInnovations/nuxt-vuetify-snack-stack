@@ -1,165 +1,89 @@
-# Nuxt Vuetify Snack Stack
+<!--
+Get your module up and running quickly.
 
->  This is a **nuxt module** which allows you to **show stackable vuetify snacks** from anywhere in your application
+Find and replace all on all files (CMD+SHIFT+F):
+- Name: My Module
+- Package name: @codamic/nuxt-vuetify-snack-stack
+- Description: My new Nuxt module
+-->
 
+# My Module
 
-## Dependencies
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
 
-This tool is based on **nuxt** and **@nuxtjs/vuetify**
+> My new Nuxt module
 
-## Setup
-1. Make sure you have `@nuxt/vuetify` installed on your nuxt project
-2. If you haven't yet activate the nuxt store (simply put a empty index.ts in /store folder)
-3. Add `@codamic/nuxt-vuetify-snack-stack` dependency to your project
+- [✨ &nbsp;Release Notes](/CHANGELOG.md)
+<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+
+## Features
+
+<!-- Highlight some of the features your module provide here -->
+- ⛰ &nbsp;Foo
+- 🚠 &nbsp;Bar
+- 🌲 &nbsp;Baz
+
+## Quick Setup
+
+1. Add `@codamic/nuxt-vuetify-snack-stack` dependency to your project
 
 ```bash
-npm install @codamic/nuxt-vuetify-snack-stack
+# Using pnpm
+pnpm add -D @codamic/nuxt-vuetify-snack-stack
+
+# Using yarn
+yarn add --dev @codamic/nuxt-vuetify-snack-stack
+
+# Using npm
+npm install --save-dev @codamic/nuxt-vuetify-snack-stack
 ```
 
-4. Add `@codamic/nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.js`
-
-
-```js
-{
-  modules: [
-    // Simple usage
-    '@codamic/nuxt-vuetify-snack-stack',
-
-    // With options
-    ['@codamic/nuxt-vuetify-snack-stack', { /* module options */ }]
-  ]
-}
-```
-5. **Add the `<snack-stack />` component to your nuxt layout**
-
-
-### Using top level options
+2. Add `@codamic/nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.ts`
 
 ```js
-{
+export default defineNuxtConfig({
   modules: [
     '@codamic/nuxt-vuetify-snack-stack'
-  ],
-  snackStack: {
-    /* module options */
-  }
-}
+  ]
+})
 ```
 
-
-## Configuration
-
-
-default configuration
-```js
-snackStack: {
-  namespace: "snack",
-  timeout: 5000,
-  types: {
-    error: {
-      icon: 'mdi-alert-circle-outline',
-      color: 'error',
-    },
-    info: {
-      icon: 'mdi-information-outline',
-      color: 'info',
-    },
-    warning: {
-      icon: 'mdi-alert-outline',
-      color: 'warning',
-    },
-    success: {
-      icon: 'mdi-check-circle-outline',
-      color: 'success',
-    },
-  },
-}
-```
-
-#### namespace: String
-Changing the namespace of the modul changes the store injection and the plugin injection. So when your change the namespace to `somethingElse` the plugin is now accessible with `$somethingElse`
-
-#### timeout: Number
-set a new default timeout for all snacks
-
-
-#### types: Object
-Yout can simply add new types and change the existing one in your `nuxt.config.js`
-```JS
-snackStack: {
-  types: {
-    custom: {
-      icon: 'custom-icon',
-      color: 'custom-color',
-    },
-    info: {
-      color: 'custom-info-type-color',
-    }
-  }
-}
-````
-
-
-
-## Usage
-
-You can call the snack plugin from any component in your project with `$snack` (or under your custom defined namespace)
-
-show a snack
-```JS
-  this.$snack.show('Awesome Message')
-```
-show a snack with options
-```JS
-  this.$snack.show({
-    text: 'Error Message',
-    type: 'error',
-    timeout: 4242,
-  })
-```
-
-#### Methods
-
-`.show(options|String)` show Snack
-
-`.hide()` hide current visible snack
-
-`.hideAll()` clear all messages
-
-`.showInfo(options|String)` show info snack
-
-`.showError(options|String)` show error snack
-
-`.showWarning(options|String)` show warning snack
-
-`.showSuccess(options|String)` show success snack
-
-`.show`**Custom**`(options|String)` generates a function for custom defined types
-
-##### show options
-```JS
-{
-  text: String,
-  type: error|info|warning|success|{custom},
-  timeout: Number,
-  icon: String,
-  color: String, // Vuetify color or HEX RGB RGBA color value
-}
-```
+That's it! You can now use My Module in your Nuxt app ✨
 
 ## Development
 
-1. Clone this repository
-2. Install dependencies using `npm install`
+```bash
+# Install dependencies
+npm install
 
-## Test
+# Generate type stubs
+npm run dev:prepare
 
-1. Clone this repository
-2. Install dependencies using `npm install`
-3. run unit tests `npm run test`
+# Develop with the playground
+npm run dev
 
-## License
+# Build the playground
+npm run dev:build
 
-[MIT License](./LICENSE)
+# Run ESLint
+npm run lint
 
-Copyright (c) Codamic Innovations GmbH
+# Run Vitest
+npm run test
+npm run test:watch
+
+# Release new version
+npm run release
+```
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/my-module
+
+[npm-downloads-src]: https://img.shields.io/npm/dm/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/my-module
+
+[license-src]: https://img.shields.io/npm/l/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/my-module
