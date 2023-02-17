@@ -14,7 +14,7 @@ const runtimeDir = 'runtime'
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: "@codamic/nuxt-vuetify-snack-stack",
-    configKey: "codamic-nuxt-vuetify-snack-stack",
+    configKey: "snackStack",
     compatibility: {
       nuxt: '^2.0.0',
       bridge: true

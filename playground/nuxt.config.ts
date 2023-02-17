@@ -13,4 +13,14 @@ export default defineNuxtConfig({
   },
   modules: ['../src/module.ts', '@nuxtjs/vuetify'],
 
+  snackStack: {
+    timeout: 2000,
+    types: {
+      custom: {
+        icon: 'mdi-alien',
+        color: 'pink'
+      }
+    }
+  }
+
 })
