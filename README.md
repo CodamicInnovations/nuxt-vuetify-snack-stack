@@ -119,7 +119,9 @@ show a snack with options
 ```
 ### Compositions API
 ```JS
-  this.$snack.showSnack('Awesome Message')
+  useSnack().showSnack('Awesome Message')
+
+  const { showSnack, ... } = useSnack()
 ```
 
 #### Methods
