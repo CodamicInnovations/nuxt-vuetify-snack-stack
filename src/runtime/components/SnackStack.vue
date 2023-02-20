@@ -24,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed, ref, nextTick } from 'vue';
+import { useState } from '#imports'
 import { SnackMessage } from '../../module'
 
 const messages = useState<SnackMessage[]>('snack-stack-messages')
