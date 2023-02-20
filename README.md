@@ -1,89 +1,164 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: @codamic/nuxt-vuetify-snack-stack
-- Description: My new Nuxt module
--->
-
-# My Module
+# Nuxt Vuetify Snack Stack
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-> My new Nuxt module
+>  This is a **nuxt module** which allows you to **show stackable vuetify snacks** from anywhere in your application
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
-## Features
+## Dependencies
+- **Nuxt 2** with nuxt-bridge
+- **@nuxtjs/vuetify**
 
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
-
-## Quick Setup
-
-1. Add `@codamic/nuxt-vuetify-snack-stack` dependency to your project
+## Setup
+1. Make sure you have `@nuxt/vuetify` installed on your nuxt project
+2. If you haven't yet activate the nuxt store (simply put a empty index.ts in /store folder)
+3. Add `@codamic/nuxt-vuetify-snack-stack` dependency to your project
 
 ```bash
-# Using pnpm
-pnpm add -D @codamic/nuxt-vuetify-snack-stack
-
-# Using yarn
-yarn add --dev @codamic/nuxt-vuetify-snack-stack
-
-# Using npm
-npm install --save-dev @codamic/nuxt-vuetify-snack-stack
+npm install @codamic/nuxt-vuetify-snack-stack
 ```
 
-2. Add `@codamic/nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.ts`
+4. Add `@codamic/nuxt-vuetify-snack-stack` to the `modules` section of `nuxt.config.js`
+
 
 ```js
-export default defineNuxtConfig({
+{
+  modules: [
+    // Simple usage
+    '@codamic/nuxt-vuetify-snack-stack',
+
+    // With options
+    ['@codamic/nuxt-vuetify-snack-stack', { /* module options */ }]
+  ]
+}
+```
+5. **Add the `<NuxtVuetifySnackStack />` component to your nuxt layout**
+
+
+### Using top level options
+
+```js
+{
   modules: [
     '@codamic/nuxt-vuetify-snack-stack'
-  ]
-})
+  ],
+  snackStack: {
+    /* module options */
+  }
+}
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+## Configuration
+
+default configuration
+```js
+snackStack: {
+  timeout: 5000,
+  types: {
+    error: {
+      icon: 'mdi-alert-circle-outline',
+      color: 'error',
+    },
+    info: {
+      icon: 'mdi-information-outline',
+      color: 'info',
+    },
+    warning: {
+      icon: 'mdi-alert-outline',
+      color: 'warning',
+    },
+    success: {
+      icon: 'mdi-check-circle-outline',
+      color: 'success',
+    },
+  },
+}
+```
+
+#### timeout: Number
+set a new default timeout for all snacks
+
+
+#### types: Object
+Yout can simply add new types and change the existing one in your `nuxt.config.ts`
+```JS
+snackStack: {
+  types: {
+    custom: {
+      icon: 'custom-icon',
+      color: 'custom-color',
+    },
+    info: {
+      icon: 'custom-info-icon',
+      color: 'custom-info-color',
+      timeout: 3000
+    }
+  }
+}
+````
+
+## Usage
+
+### Options API
+
+You can call the snack plugin from any component in your project with `$snack` (or under your custom defined namespace)
+
+show a snack
+```JS
+  this.$snack.showSnack('Awesome Message')
+```
+show a snack with options
+```JS
+  this.$snack.showSnack({
+    text: 'Error Message',
+    type: 'error',
+    timeout: 4242,
+  })
+```
+### Compositions API
+```JS
+  this.$snack.showSnack('Awesome Message')
+```
+
+#### Methods
+
+`.showSnack(msg: SnackMessage | string)` show Snack
+
+`.showSnackWithType(type: string, msg: SnackMessage | string)` show Snack
+
+`.showInfoSnack(msg: SnackMessage | string)` show info snack
+
+`.showErrorSnack(msg: SnackMessage | string)` show error snack
+
+`.showWarningSnack(msg: SnackMessage | string)` show warning snack
+
+`.showSuccessSnack(msg: SnackMessage | string)` show success snack
+
+##### SnackMessage
+```JS
+{
+  text: String,
+  timeout: Number,
+  icon: String,
+  color: String, // Vuetify color or HEX RGB RGBA color value
+}
+```
 
 ## Development
 
-```bash
-# Install dependencies
-npm install
+1. Clone this repository
+2. Install dependencies using `npm install`
 
-# Generate type stubs
-npm run dev:prepare
+## Test
 
-# Develop with the playground
-npm run dev
+1. Clone this repository
+2. Install dependencies using `npm install`
+3. run unit tests `npm run test`
 
-# Build the playground
-npm run dev:build
+## License
 
-# Run ESLint
-npm run lint
+[MIT License](./LICENSE)
 
-# Run Vitest
-npm run test
-npm run test:watch
-
-# Release new version
-npm run release
-```
-
-<!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/my-module
-
-[npm-downloads-src]: https://img.shields.io/npm/dm/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/my-module
-
-[license-src]: https://img.shields.io/npm/l/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/my-module
+Copyright (c) Codamic Innovations GmbH
