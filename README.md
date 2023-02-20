@@ -1,11 +1,15 @@
 # Nuxt Vuetify Snack Stack
 
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
+
 >  This is a **nuxt module** which allows you to **show stackable vuetify snacks** from anywhere in your application
 
 
 ## Dependencies
-
-This tool is based on **nuxt** and **@nuxtjs/vuetify**
+- **Nuxt 2** with nuxt-bridge
+- **@nuxtjs/vuetify**
 
 ## Setup
 1. Make sure you have `@nuxt/vuetify` installed on your nuxt project
@@ -30,7 +34,7 @@ npm install @codamic/nuxt-vuetify-snack-stack
   ]
 }
 ```
-5. **Add the `<snack-stack />` component to your nuxt layout**
+5. **Add the `<NuxtVuetifySnackStack />` component to your nuxt layout**
 
 
 ### Using top level options
@@ -46,14 +50,11 @@ npm install @codamic/nuxt-vuetify-snack-stack
 }
 ```
 
-
 ## Configuration
-
 
 default configuration
 ```js
 snackStack: {
-  namespace: "snack",
   timeout: 5000,
   types: {
     error: {
@@ -76,15 +77,12 @@ snackStack: {
 }
 ```
 
-#### namespace: String
-Changing the namespace of the modul changes the store injection and the plugin injection. So when your change the namespace to `somethingElse` the plugin is now accessible with `$somethingElse`
-
 #### timeout: Number
 set a new default timeout for all snacks
 
 
 #### types: Object
-Yout can simply add new types and change the existing one in your `nuxt.config.js`
+Yout can simply add new types and change the existing one in your `nuxt.config.ts`
 ```JS
 snackStack: {
   types: {
@@ -93,54 +91,55 @@ snackStack: {
       color: 'custom-color',
     },
     info: {
-      color: 'custom-info-type-color',
+      icon: 'custom-info-icon',
+      color: 'custom-info-color',
+      timeout: 3000
     }
   }
 }
 ````
 
-
-
 ## Usage
+
+### Options API
 
 You can call the snack plugin from any component in your project with `$snack` (or under your custom defined namespace)
 
 show a snack
 ```JS
-  this.$snack.show('Awesome Message')
+  this.$snack.showSnack('Awesome Message')
 ```
 show a snack with options
 ```JS
-  this.$snack.show({
+  this.$snack.showSnack({
     text: 'Error Message',
     type: 'error',
     timeout: 4242,
   })
 ```
+### Compositions API
+```JS
+  this.$snack.showSnack('Awesome Message')
+```
 
 #### Methods
 
-`.show(options|String)` show Snack
+`.showSnack(msg: SnackMessage | string)` show Snack
 
-`.hide()` hide current visible snack
+`.showSnackWithType(type: string, msg: SnackMessage | string)` show Snack
 
-`.hideAll()` clear all messages
+`.showInfoSnack(msg: SnackMessage | string)` show info snack
 
-`.showInfo(options|String)` show info snack
+`.showErrorSnack(msg: SnackMessage | string)` show error snack
 
-`.showError(options|String)` show error snack
+`.showWarningSnack(msg: SnackMessage | string)` show warning snack
 
-`.showWarning(options|String)` show warning snack
+`.showSuccessSnack(msg: SnackMessage | string)` show success snack
 
-`.showSuccess(options|String)` show success snack
-
-`.show`**Custom**`(options|String)` generates a function for custom defined types
-
-##### show options
+##### SnackMessage
 ```JS
 {
   text: String,
-  type: error|info|warning|success|{custom},
   timeout: Number,
   icon: String,
   color: String, // Vuetify color or HEX RGB RGBA color value
