@@ -1,8 +1,18 @@
 # Nuxt Vuetify Snack Stack
 
+<!-- Badges -->
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
+
+[npm-version-src]: https://img.shields.io/npm/v/@codamic/nuxt-vuetify-snack-stack/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@codamic/nuxt-vuetify-snack-stack
+
+[npm-downloads-src]: https://img.shields.io/npm/dm/@codamic/nuxt-vuetify-snack-stack.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@codamic/nuxt-vuetify-snack-stack
+
+[license-src]: https://img.shields.io/npm/l/@codamic/nuxt-vuetify-snack-stack.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://www.npmjs.com/package/@codamic/nuxt-vuetify-snack-stack
 
 >  This is a **nuxt module** which allows you to **show stackable vuetify snacks** from anywhere in your application
 
